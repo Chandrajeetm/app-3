@@ -18,7 +18,7 @@ const Message = (props) => {
     const actions = [
         { icon: <CopyToClipboard text={props.title + " " + props.content} ><FileCopyIcon /></CopyToClipboard>, name: 'Copy' },
         { icon: <SaveIcon />, name: 'Save' },
-        { icon: <PrintIcon />, name: 'Print' },
+        { icon: <PrintIcon onClick={()=>{window.print()}}/>, name: 'Print' },
         { icon: <ShareIcon />, name: 'Share' },
     ];
 
