@@ -7,8 +7,22 @@ import Footer from "./Footer";
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 const App = () => {
-    const [addItem, setIaddtem] = useState([]);
-    const [a,seta]=useState(false);
+    const [addItem, setIaddtem] = useState(() => {
+        const savedItem = localStorage.getItem("addItem");
+        const parsedItem = JSON.parse(savedItem);
+        return parsedItem || "";
+    });
+    const [a,seta]=useState(() => {
+        if (addItem) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    });
+        useEffect(() => {
+        localStorage.setItem('addItem', JSON.stringify(addItem));
+    }, [addItem]);
 
 
     const addNote = (note) => {
