@@ -41,9 +41,16 @@ label{
 label:hover{
   color: rgb(20, 163, 56);
 }
+.delete_label{
+  margin: auto;
+  margin-left: 32px;
+}
+
 .delete_label:hover{
 color: rgb(219, 11, 11);
+cursor: pointer;
 }
+
 footer p{
   display: flex;
   justify-content: center;
@@ -57,7 +64,7 @@ footer
 .card-body{
   /* border: 1px solid #e3aa0f36; */
   box-shadow: 8px 16px 27px #58515638;
-  border-radius: 158px;
+ 
 }
 .whole{
   box-shadow: 0px 12px 52px #8b8da1;
@@ -75,4 +82,8 @@ footer
 .keepNoteHere{
   height: 194px;
     padding: 74px;
+}
+.card-title{
+  font-family: 'Playfair Display SC', serif;
+  color: #a89797;
 }
