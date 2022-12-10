@@ -1,27 +1,33 @@
 
-import React, { useState } from "react";
+import React, { useState} from "react";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import AddCardIcon from '@mui/icons-material/AddCard';
 const InputBar = (props) => {
+ 
     const [ex, setex] = useState(false);
     const [note, setNote] = useState({
         title: '',
-        content: ''
+        content: '',
+        done: false,
+        xid: new Date().getTime().toString(),
+        createTime: new Date().toString().substring(0, 15)
     });
 
     const event1 = (p) => {
         setex(true);
-
     }
+
     const event2 = (p) => {
         setex(false);
         props.passNote(note);
         setNote({
             title: '',
-            content: ''
+            content: '',
+            done: false,
+            xid: new Date().getTime().toString() ,
+            createTime:  new Date().toString().substring(0, 15)
         })
-
     }
 
     const inputevent = (event) => {
